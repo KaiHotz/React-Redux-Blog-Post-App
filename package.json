@@ -1,7 +1,7 @@
 {
-  "name": "react-redux-simple-starter",
+  "name": "react-redux-blog-post-app",
   "version": "1.0.0",
-  "description": "Simple starter package for Redux with React and Babel support",
+  "description": "Simple Blog Post App done with React Redux and Babel support",
   "main": "index.js",
   "repository": "",
   "scripts": {
