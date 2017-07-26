@@ -6,7 +6,7 @@ There are two methods for getting started with this repo.
 
 ```
   > git clone git@github.com:SpecialKcl/React-Redux-Blog-Post-App.git
-  > cd React-Redux-Simple-Starter
+  > cd React-Redux-Blog-Post-App
   > npm install
   > npm start
   > in your Browser open http://localhost:8080
