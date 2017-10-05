@@ -10,7 +10,8 @@ class PostsIndex extends Component {
   }
 
   renderPosts () {
-    return _.map(this.props.posts, post => {
+    const { posts } = this.props
+    return _.map(posts, post => {
       return (
         <li key={post.id} className='list-group-item'>
           <Link to={`/posts/${post.id}`}>
@@ -21,18 +22,30 @@ class PostsIndex extends Component {
     })
   }
 
+  isEmpty (obj) {
+    for (let key in obj) {
+      if (obj.hasOwnProperty(key)) { return false }
+    }
+    return true
+  }
+
   render () {
+    const { posts } = this.props
     return (
       <div>
-        <div className='text-xs-right'>
-          <Link to='/posts/new' className='btn btn-primary'>
+        <div className='row'>
+          <Link to='/posts/new' className='btn btn-primary right'>
             Add a Post
           </Link>
         </div>
         <h3>Posts</h3>
-        <ul className='list-group'>
-          {this.renderPosts()}
-        </ul>
+        { !this.isEmpty(posts) ? (
+          <ul className='list-group'>
+            {this.renderPosts()}
+          </ul>
+        ) : (
+          <h2>No Posts added yet</h2>
+        )}
       </div>
     )
   }
