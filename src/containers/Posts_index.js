@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { compose } from 'recompose'
 import { Link } from 'react-router-dom'
 import PostsList from '@/src/components/Posts_list'
 import { fetchPosts } from '@/src/actions'
@@ -42,4 +43,6 @@ function mapStateToProps ({ posts }) {
   return { posts }
 }
 
-export default connect(mapStateToProps, { fetchPosts })(PostsIndex)
+export default compose(
+  connect(mapStateToProps, { fetchPosts })
+)(PostsIndex)

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { compose } from 'recompose'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { fetchSinglePost, deletePost } from '@/src/actions'
@@ -45,4 +46,6 @@ function mapStateToProps ({ posts }, ownProps) {
   return { post: posts[ownProps.match.params.id] }
 }
 
-export default connect(mapStateToProps, { fetchSinglePost, deletePost })(PostsShow)
+export default compose(
+  connect(mapStateToProps, { fetchSinglePost, deletePost })
+)(PostsShow)

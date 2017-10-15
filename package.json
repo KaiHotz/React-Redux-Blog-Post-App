@@ -41,11 +41,13 @@
   },
   "dependencies": {
     "axios": "^0.16.1",
+    "history": "^4.7.2",
     "lodash": "^4.17.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.4",
     "react-router-dom": "^4.1.1",
+    "recompose": "^0.26.0",
     "redux": "^3.6.0",
     "redux-form": "^7.0.4",
     "redux-promise": "^0.5.3"

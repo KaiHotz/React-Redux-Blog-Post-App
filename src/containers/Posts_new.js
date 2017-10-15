@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { compose } from 'recompose'
 import { Field, reduxForm } from 'redux-form'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -87,9 +88,10 @@ function validate (values) {
   return errors
 }
 
-export default reduxForm({
-  validate,
-  form: 'PostsNewForm'
-})(
-  connect(null, { createPost })(PostsNew)
-)
+export default compose(
+  connect(null, { createPost }),
+  reduxForm({
+    validate,
+    form: 'PostsNewForm'
+  })
+)(PostsNew)

@@ -8,7 +8,8 @@ const VENDOR_LIBS = [
   'react-redux',
   'redux-form',
   'redux',
-  'axios'
+  'axios',
+  'history'
 ]
 
 module.exports = {
