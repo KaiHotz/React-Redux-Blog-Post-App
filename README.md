@@ -9,7 +9,7 @@ There are two methods for getting started with this repo.
   > cd React-Redux-Blog-Post-App
   > npm install
   > npm start
-  > in your Browser open http://localhost:8080
+  > in your Browser open http://localhost:3000
 ```
 
 #### Not Familiar with Git?
@@ -18,7 +18,7 @@ Click [here](https://github.com/SpecialKcl/React-Redux-Blog-Post-App.git) then d
 ```
   > npm install
   > npm start
-  > in your Browser open http://localhost:8080
+  > in your Browser open http://localhost:3000
 ```
 
 #### To run Integration Test

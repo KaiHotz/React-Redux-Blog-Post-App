@@ -1,25 +1,12 @@
-import _ from 'lodash'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { fetchPosts } from '../actions'
+import PostsList from '@/src/components/Posts_list'
+import { fetchPosts } from '@/src/actions'
 
 class PostsIndex extends Component {
   componentDidMount () {
     this.props.fetchPosts()
-  }
-
-  renderPosts () {
-    const { posts } = this.props
-    return _.map(posts, post => {
-      return (
-        <li key={post.id} className='list-group-item'>
-          <Link to={`/posts/${post.id}`}>
-            {post.title}
-          </Link>
-        </li>
-      )
-    })
   }
 
   isEmpty (obj) {
@@ -41,7 +28,7 @@ class PostsIndex extends Component {
         <h3>Posts</h3>
         { !this.isEmpty(posts) ? (
           <ul className='list-group'>
-            {this.renderPosts()}
+            <PostsList posts={posts} />
           </ul>
         ) : (
           <h2>No Posts added yet</h2>
@@ -51,8 +38,8 @@ class PostsIndex extends Component {
   }
 }
 
-function mapStateToProps (state) {
-  return { posts: state.posts }
+function mapStateToProps ({ posts }) {
+  return { posts }
 }
 
 export default connect(mapStateToProps, { fetchPosts })(PostsIndex)
